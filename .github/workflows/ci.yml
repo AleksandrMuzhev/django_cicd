@@ -39,7 +39,7 @@ jobs:
       - name: Установка python
         uses: actions/setup-python@v4
         with:
-          - python-version: 3.10
+          python-version: 3.10
 
       - name: Установить зависимости
         run: pip install -r requirements.txt
@@ -50,7 +50,7 @@ jobs:
       - name: Тестирование
         run: python manage.py test
         with:
-          SECRET_KEY: ${{ env.SECRET }}
+          SECRET_KEY: ${{ env.SECRET_KEY }}
           DEBUG: ${{ env.DEBUG_MODE }}
           ALLOWED: ${{ env.ALLOWED_HOSTS }}
           DB_ENGINE: ${{ env.DB_ENGINE }}
